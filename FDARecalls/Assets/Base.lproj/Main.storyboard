@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lc1-uv-it0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FDA Recalls-->
+        <scene sceneID="bwN-PZ-ue0">
+            <objects>
+                <viewController id="aWp-LL-s99" customClass="MapViewVC" customModule="FDARecalls" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zki-lF-nQO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m8A-lw-Lox">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="weg-nm-b7O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m8A-lw-Lox" firstAttribute="top" secondItem="weg-nm-b7O" secondAttribute="top" id="7EG-Sh-XgA"/>
+                            <constraint firstItem="m8A-lw-Lox" firstAttribute="leading" secondItem="weg-nm-b7O" secondAttribute="leading" id="NCs-Os-lBm"/>
+                            <constraint firstItem="weg-nm-b7O" firstAttribute="trailing" secondItem="m8A-lw-Lox" secondAttribute="trailing" id="fvJ-lz-ZKw"/>
+                            <constraint firstItem="weg-nm-b7O" firstAttribute="bottom" secondItem="m8A-lw-Lox" secondAttribute="bottom" id="wf8-et-CAy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FDA Recalls" id="ncP-TQ-SGq"/>
+                    <connections>
+                        <outlet property="mapView" destination="m8A-lw-Lox" id="VMP-7i-Sqm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDx-Ab-zqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WqU-Qj-eR9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lc1-uv-it0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e87-da-GYl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aWp-LL-s99" kind="relationship" relationship="rootViewController" id="gFH-tE-zym"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kh8-NQ-mEO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-913" y="137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -14,6 +14,7 @@
 		9531B491274EF2F0001FDB64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9531B48F274EF2F0001FDB64 /* LaunchScreen.storyboard */; };
 		95B17946274EF66C001B4616 /* MapViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17945274EF66C001B4616 /* MapViewVC.swift */; };
 		95B17949274EF700001B4616 /* FDAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17948274EF700001B4616 /* FDAClient.swift */; };
+		95B1794E274F03CE001B4616 /* GetReportsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1794D274F03CE001B4616 /* GetReportsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9531B492274EF2F0001FDB64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95B17945274EF66C001B4616 /* MapViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewVC.swift; sourceTree = "<group>"; };
 		95B17948274EF700001B4616 /* FDAClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAClient.swift; sourceTree = "<group>"; };
+		95B1794D274F03CE001B4616 /* GetReportsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReportsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				9531B484274EF2EC001FDB64 /* AppDelegate.swift */,
 				9531B486274EF2EC001FDB64 /* SceneDelegate.swift */,
 				95B1794A274EF70B001B4616 /* FDAClient */,
+				95B1794C274F038F001B4616 /* Response */,
 				95B17947274EF6A4001B4616 /* ViewController */,
 				95B1794B274EF720001B4616 /* Assets */,
 				9531B492274EF2F0001FDB64 /* Info.plist */,
@@ -92,6 +95,14 @@
 				9531B48F274EF2F0001FDB64 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		95B1794C274F038F001B4616 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				95B1794D274F03CE001B4616 /* GetReportsResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95B17949274EF700001B4616 /* FDAClient.swift in Sources */,
+				95B1794E274F03CE001B4616 /* GetReportsResponse.swift in Sources */,
 				9531B485274EF2EC001FDB64 /* AppDelegate.swift in Sources */,
 				95B17946274EF66C001B4616 /* MapViewVC.swift in Sources */,
 				9531B487274EF2EC001FDB64 /* SceneDelegate.swift in Sources */,

@@ -10,28 +10,42 @@ import Foundation
 class FDAClient{
     
     
-    enum Endpoints{
+    class func randomChar() -> String {
         
-        static let base = "https://api.fda.gov/food/enforcement.json"
+        let len = 5
+        let stringChars = Array("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890")
+        var signature = ""
         
-        case getReports
-        
-        struct Auth {
-            static let apikey = "WzQzV4WvFtPquIjaxjGyXyOyjxVL5zmKjkH0tmfg"
+        for _ in 0..<len {
+            let random = arc4random() % UInt32(stringChars.count)
+            signature.append(stringChars[Int(random)])
+            print(signature)
         }
         
+        return signature
+    }
+    
+    struct RandomSignature{
+        static var signature = randomChar()
+    }
+    
+    
+    enum Endpoints{
+        
+        static let base = "https://www.accessdata.fda.gov/rest/iresapi/"
+        
+        case getReports
+                
         var stringValue: String {
             switch self {
-            case .getReports: return Endpoints.base + "?api_key=\(Auth.apikey)?search=recall_initiation_date:20210101&limit=25"
+            case .getReports: return Endpoints.base + "/recalls/?signature=\(RandomSignature.signature)"
             }
-            
         }
         
         var url: URL{
             return URL(string: stringValue)!
         }
     }
-    
 }
 
 

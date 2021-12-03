@@ -15,6 +15,7 @@
 		95B17946274EF66C001B4616 /* MapViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17945274EF66C001B4616 /* MapViewVC.swift */; };
 		95B17949274EF700001B4616 /* FDAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17948274EF700001B4616 /* FDAClient.swift */; };
 		95B1794E274F03CE001B4616 /* GetReportsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1794D274F03CE001B4616 /* GetReportsResponse.swift */; };
+		95B17950275AD11B001B4616 /* GetRecalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1794F275AD11A001B4616 /* GetRecalls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		95B17945274EF66C001B4616 /* MapViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewVC.swift; sourceTree = "<group>"; };
 		95B17948274EF700001B4616 /* FDAClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAClient.swift; sourceTree = "<group>"; };
 		95B1794D274F03CE001B4616 /* GetReportsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReportsResponse.swift; sourceTree = "<group>"; };
+		95B1794F275AD11A001B4616 /* GetRecalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecalls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				95B1794D274F03CE001B4616 /* GetReportsResponse.swift */,
+				95B1794F275AD11A001B4616 /* GetRecalls.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				9531B485274EF2EC001FDB64 /* AppDelegate.swift in Sources */,
 				95B17946274EF66C001B4616 /* MapViewVC.swift in Sources */,
 				9531B487274EF2EC001FDB64 /* SceneDelegate.swift in Sources */,
+				95B17950275AD11B001B4616 /* GetRecalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

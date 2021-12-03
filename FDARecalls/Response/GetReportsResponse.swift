@@ -7,12 +7,10 @@
 
 import Foundation
 
-//struct GetReportsResponse: Codable {
-//   
-//    let status: String
-//    let city: String
-//    let state: String
-//    let country: String
-//    let classification: String
-//     
-//}
+struct GetReportsResponse: Codable {
+    let message: String
+    let resultcount: Int
+    let statuscode: Int
+    let result: [GetRecalls]
+    
+}

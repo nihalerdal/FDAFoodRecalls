@@ -16,6 +16,7 @@
 		95B17949274EF700001B4616 /* FDAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17948274EF700001B4616 /* FDAClient.swift */; };
 		95B1794E274F03CE001B4616 /* GetReportsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1794D274F03CE001B4616 /* GetReportsResponse.swift */; };
 		95B17950275AD11B001B4616 /* GetRecalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1794F275AD11A001B4616 /* GetRecalls.swift */; };
+		95B17953275EC93F001B4616 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17952275EC93F001B4616 /* ProductModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		95B17948274EF700001B4616 /* FDAClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDAClient.swift; sourceTree = "<group>"; };
 		95B1794D274F03CE001B4616 /* GetReportsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReportsResponse.swift; sourceTree = "<group>"; };
 		95B1794F275AD11A001B4616 /* GetRecalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecalls.swift; sourceTree = "<group>"; };
+		95B17952275EC93F001B4616 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,7 @@
 			children = (
 				9531B484274EF2EC001FDB64 /* AppDelegate.swift */,
 				9531B486274EF2EC001FDB64 /* SceneDelegate.swift */,
-				95B1794A274EF70B001B4616 /* FDAClient */,
+				95B17951275EC8FC001B4616 /* Model */,
 				95B1794C274F038F001B4616 /* Response */,
 				95B17947274EF6A4001B4616 /* ViewController */,
 				95B1794B274EF720001B4616 /* Assets */,
@@ -106,6 +108,23 @@
 				95B1794F275AD11A001B4616 /* GetRecalls.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		95B17951275EC8FC001B4616 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95B1794A274EF70B001B4616 /* FDAClient */,
+				95B17954275EC943001B4616 /* Data */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95B17954275EC943001B4616 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				95B17952275EC93F001B4616 /* ProductModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +203,7 @@
 				9531B485274EF2EC001FDB64 /* AppDelegate.swift in Sources */,
 				95B17946274EF66C001B4616 /* MapViewVC.swift in Sources */,
 				9531B487274EF2EC001FDB64 /* SceneDelegate.swift in Sources */,
+				95B17953275EC93F001B4616 /* ProductModel.swift in Sources */,
 				95B17950275AD11B001B4616 /* GetRecalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

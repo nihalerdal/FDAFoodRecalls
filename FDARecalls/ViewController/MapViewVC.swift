@@ -25,7 +25,7 @@ class MapViewVC: UIViewController {
         
         FDAClient.getRecalls { recallsresponse, error in
             if error == nil {
-                
+                guard let recallsresponse = recallsresponse else {return}
                 RecalledProduct.recalledProduct = recallsresponse
                 
                 var annotations = [MKPointAnnotation]()

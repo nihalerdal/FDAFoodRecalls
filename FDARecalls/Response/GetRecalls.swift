@@ -13,32 +13,31 @@ struct GetRecalls: Codable {
     let firmcitynam: String
     let firmcountrynam: String
     let firmline1adr: String
-    let firmline2adr: String
+    let firmline2adr: String?
     let firmpostalcd: String
     let productid: String
     let productdescriptiontxt: String
     let productshortreasontxt: String
-    let createdt: Date
     let centerclassificationtypetxt: String
     let productdistributedquantity: String
     let phasetxt : String
     let centercd : String
-    
-//    init(firmlegalnam: String, firmcitynam: String, firmcountrynam: String, firmline1adr: String,firmline2adr:String, firmpostalcd: String, productid:String, productdescriptiontxt:String, productshortreasontxt:String, createdt:Date, centerclassificationtypetxt: String, productdistributedquantity: String, phasetxt:String, centercd:String   ) {
-//        
-//        self.firmlegalnam = firmlegalnam
-//        self.firmcitynam = firmcitynam
-//        self.firmcountrynam = firmcountrynam
-//        self.firmline1adr = firmline1adr
-//        self.firmline2adr = firmline2adr
-//        self.firmpostalcd = firmpostalcd
-//        self.productid = productid
-//        self.productdescriptiontxt = productdescriptiontxt
-//        self.productshortreasontxt = productshortreasontxt
-//        self.createdt = createdt
-//        self.centerclassificationtypetxt = centerclassificationtypetxt
-//        self.productdistributedquantity = productdistributedquantity
-//        self.phasetxt = phasetxt
-//        self.centercd = centercd
-//    }
+    let rid: Int
+
+    enum CodingKeys: String, CodingKey{
+        case firmlegalnam = "FIRMLEGALNAM"
+        case firmcitynam = "FIRMCITYNAM"
+        case firmcountrynam = "FIRMCOUNTRYNAM"
+        case firmline1adr = "FIRMLINE1ADR"
+        case firmline2adr = "FIRMLINE2ADR"
+        case firmpostalcd = "FIRMPOSTALCD"
+        case productid = "PRODUCTID"
+        case productdescriptiontxt = "PRODUCTDESCRIPTIONTXT"
+        case productshortreasontxt = "PRODUCTSHORTREASONTXT"
+        case centerclassificationtypetxt = "CENTERCLASSIFICATIONTYPETXT"
+        case productdistributedquantity = "PRODUCTDISTRIBUTEDQUANTITY"
+        case phasetxt =  "PHASETXT"
+        case centercd = "CENTERCD"
+        case rid =  "RID"
+    }
 }

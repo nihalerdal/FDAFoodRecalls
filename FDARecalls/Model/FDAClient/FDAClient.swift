@@ -19,9 +19,8 @@ class FDAClient{
         for _ in 0..<len {
             let random = arc4random() % UInt32(stringChars.count)
             signature.append(stringChars[Int(random)])
-            print(signature)
         }
-        
+        print(signature)
         return signature
     }
     
@@ -32,12 +31,8 @@ class FDAClient{
     
     enum Endpoints{
         
-        static let base = "https://www.accessdata.fda.gov/rest/iresapi/"
-        
-        //        struct Auth {
-        //            static let Authorization-User = ""
-        //        }
-        
+        static let base = "https://www.accessdata.fda.gov/rest/iresapi"
+                
         case getReports
                 
         var stringValue: String {
@@ -82,15 +77,14 @@ class FDAClient{
 //        task.resume()
 //    }
     
-    class func getRecalls(completion: @escaping ([GetRecalls], Error?)-> Void ) {
-        
+    class func getRecalls(completion: @escaping ([GetRecalls]?, Error?)-> Void ) {
         var request = URLRequest(url: Endpoints.getReports.url)
         request.httpMethod = "POST"
         request.addValue("pZW5tSRqfn6jGph0", forHTTPHeaderField: "Authorization-Key")
         request.addValue("nihalerdall@gmail.com", forHTTPHeaderField: "Authorization-User")
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
-        request.httpBody = ("{\"displaycolumns\": \"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,createdt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd\",\"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\",\"start\": 1,\"rows\": 2500, \"sort\": \"productid\", \"sortorder\": \"asc\"}").data(using: .utf8)
+        request.httpBody = ("{\"displaycolumns\": \"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd,rid\",\"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\",\"start\": 1,\"rows\": 10, \"sort\": \"productid\", \"sortorder\": \"asc\"}").data(using: .utf8)
         
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

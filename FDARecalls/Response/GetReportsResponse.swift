@@ -11,6 +11,12 @@ struct GetReportsResponse: Codable {
     let message: String
     let resultcount: Int
     let statuscode: Int
-    let result: [GetRecalls]
+    let result: [GetRecalls]?
     
+    enum CodingKeys: String, CodingKey{
+        case message = "MESSAGE"
+        case resultcount = "RESULTCOUNT"
+        case statuscode = "STATUSCODE"
+        case result = "RESULT"
+    }
 }

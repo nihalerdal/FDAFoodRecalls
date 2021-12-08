@@ -24,21 +24,21 @@ struct GetRecalls: Codable {
     let phasetxt : String
     let centercd : String
     
-    init(firmlegalnam: String, firmcitynam: String, firmcountrynam: String, firmline1adr: String,firmline2adr:String, firmpostalcd: String, productid:String, productdescriptiontxt:String, productshortreasontxt:String, createdt:Date, centerclassificationtypetxt: String, productdistributedquantity: String, phasetxt:String, centercd:String   ) {
-        
-        self.firmlegalnam = firmlegalnam
-        self.firmcitynam = firmcitynam
-        self.firmcountrynam = firmcountrynam
-        self.firmline1adr = firmline1adr
-        self.firmline2adr = firmline2adr
-        self.productid = productid
-        self.productdescriptiontxt = productdescriptiontxt
-        self.productshortreasontxt = productshortreasontxt
-        self.createdt = createdt
-        self.centerclassificationtypetxt = centerclassificationtypetxt
-        self.productdistributedquantity = productdistributedquantity
-        self.phasetxt = phasetxt
-        self.centercd = centercd
-    }
-    
+//    init(firmlegalnam: String, firmcitynam: String, firmcountrynam: String, firmline1adr: String,firmline2adr:String, firmpostalcd: String, productid:String, productdescriptiontxt:String, productshortreasontxt:String, createdt:Date, centerclassificationtypetxt: String, productdistributedquantity: String, phasetxt:String, centercd:String   ) {
+//        
+//        self.firmlegalnam = firmlegalnam
+//        self.firmcitynam = firmcitynam
+//        self.firmcountrynam = firmcountrynam
+//        self.firmline1adr = firmline1adr
+//        self.firmline2adr = firmline2adr
+//        self.firmpostalcd = firmpostalcd
+//        self.productid = productid
+//        self.productdescriptiontxt = productdescriptiontxt
+//        self.productshortreasontxt = productshortreasontxt
+//        self.createdt = createdt
+//        self.centerclassificationtypetxt = centerclassificationtypetxt
+//        self.productdistributedquantity = productdistributedquantity
+//        self.phasetxt = phasetxt
+//        self.centercd = centercd
+//    }
 }

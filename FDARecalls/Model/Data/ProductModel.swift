@@ -9,5 +9,6 @@ import Foundation
 
 struct RecalledProduct {
     
-    static var address: String = ""
+    static var recalledProduct = [GetRecalls]()
+
 }

@@ -80,11 +80,21 @@ class FDAClient{
     class func getRecalls(completion: @escaping ([GetRecalls]?, Error?)-> Void ) {
         var request = URLRequest(url: Endpoints.getReports.url)
         request.httpMethod = "POST"
-        request.addValue("pZW5tSRqfn6jGph0", forHTTPHeaderField: "Authorization-Key")
-        request.addValue("nihalerdall@gmail.com", forHTTPHeaderField: "Authorization-User")
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.addValue("pZW5tSRqfn6jGph0",forHTTPHeaderField: "Authorization-Key")
+        request.addValue("nihalerdall@gmail.com",forHTTPHeaderField: "Authorization-User")
+        request.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
         
-        request.httpBody = ("{\"displaycolumns\": \"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd,rid\",\"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\",\"start\": 1,\"rows\": 10, \"sort\": \"productid\", \"sortorder\": \"asc\"}").data(using: .utf8)
+        let parameter = ["payLoad":  "{\"displaycolumns\":\"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd,rid\", \"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\", \"start\":1, \"rows\":10, \"sort\": \"productid\", \"sortorder\": \"asc\"}"]
+        let postData = try? JSONEncoder().encode(parameter)
+        request.httpBody = postData
+        
+//        do {
+//               request.httpBody = try JSONSerialization.data(withJSONObject: parameter, options: .prettyPrinted) // pass dictionary to data object and set it as request body
+//           } catch let error {
+//               print(error.localizedDescription)
+//           }
+        
+//        request.httpBody = ("{\"displaycolumns\":\"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd,rid\", \"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\", \"start\":1, \"rows\":10, \"sort\": \"productid\", \"sortorder\": \"asc\"}").data(using: .utf8)
         
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

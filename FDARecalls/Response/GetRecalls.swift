@@ -20,8 +20,8 @@ struct GetRecalls: Codable {
     let productshortreasontxt: String
     let centerclassificationtypetxt: String
     let productdistributedquantity: String
-    let phasetxt : String
-    let centercd : String
+    let phasetxt: String
+    let centercd: String
     let rid: Int
 
     enum CodingKeys: String, CodingKey{

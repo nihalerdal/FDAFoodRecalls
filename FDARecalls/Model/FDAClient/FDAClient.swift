@@ -84,18 +84,10 @@ class FDAClient{
         request.addValue("nihalerdall@gmail.com",forHTTPHeaderField: "Authorization-User")
         request.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
         
-        let parameter = ["payLoad":  "{\"displaycolumns\":\"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd,rid\", \"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\", \"start\":1, \"rows\":10, \"sort\": \"productid\", \"sortorder\": \"asc\"}"]
-        let postData = try? JSONEncoder().encode(parameter)
+        let parameters = "payLoad={\"displaycolumns\": \"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd,rid\",\"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\",\"start\": 1,\"rows\": 5, \"sort\": \"productid\", \"sortorder\": \"asc\"}"
+        
+        let postData =  parameters.data(using: .utf8)
         request.httpBody = postData
-        
-//        do {
-//               request.httpBody = try JSONSerialization.data(withJSONObject: parameter, options: .prettyPrinted) // pass dictionary to data object and set it as request body
-//           } catch let error {
-//               print(error.localizedDescription)
-//           }
-        
-//        request.httpBody = ("{\"displaycolumns\":\"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd,rid\", \"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\", \"start\":1, \"rows\":10, \"sort\": \"productid\", \"sortorder\": \"asc\"}").data(using: .utf8)
-        
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
@@ -105,8 +97,11 @@ class FDAClient{
                 return
             }
             
+            let decoder = JSONDecoder()
+            print(String(data: data, encoding: .utf8)!)
+            
             do {
-                let responseObject = try JSONDecoder().decode(GetReportsResponse.self, from: data)
+                let responseObject = try decoder.decode(GetReportsResponse.self, from: data)
                 
 //                for recalledproduct in responseObject.result{
 //                    let address = recalledproduct.firmline1adr + "" + recalledproduct.firmline2adr

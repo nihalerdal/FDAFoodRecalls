@@ -31,7 +31,7 @@ class MapViewVC: UIViewController {
                 var annotations = [MKPointAnnotation]()
                 
                 for product in RecalledProduct.recalledProduct {
-                    let address = "\(product.firmline1adr)" + "" + "\(product.firmline2adr)"
+                    let address = "\(product.firmline1adr)" //+ "" + "\(product.firmline2adr)"
                     self.geocoder.geocodeAddressString(address) { placemarks, error in
                         if error == nil{
                             if let coordinate = placemarks?.first?.location?.coordinate{

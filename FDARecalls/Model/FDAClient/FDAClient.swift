@@ -84,7 +84,7 @@ class FDAClient{
         request.addValue("nihalerdall@gmail.com",forHTTPHeaderField: "Authorization-User")
         request.addValue("application/x-www-form-urlencoded",forHTTPHeaderField: "Content-Type")
         
-        let parameters = "payLoad={\"displaycolumns\": \"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd,rid\",\"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\",\"start\": 1,\"rows\": 5, \"sort\": \"productid\", \"sortorder\": \"asc\"}"
+        let parameters = "payLoad={\"displaycolumns\": \"firmlegalnam,firmcitynam,firmcountrynam,firmline1adr,firmline2adr,firmpostalcd,productid,productdescriptiontxt,productshortreasontxt,centerclassificationtypetxt,productdistributedquantity,phasetxt,centercd,rid\",\"filter\":\"[{'centercd':['CFSAN']},{'phasetxt':['ongoing']}]\",\"start\": 1,\"rows\": 2, \"sort\": \"productid\", \"sortorder\": \"asc\"}"
         
         let postData =  parameters.data(using: .utf8)
         request.httpBody = postData

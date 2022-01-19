@@ -13,7 +13,7 @@ class MapViewVC: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    lazy var geocoder = CLGeocoder()
+//    lazy var geocoder = CLGeocoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +31,10 @@ class MapViewVC: UIViewController {
                 var annotations = [MKPointAnnotation]()
                 
                 for product in RecalledProduct.recalledProduct {
-                    let address = "\(product.firmline1adr)" //+ "" + "\(product.firmline2adr)"
-                    self.geocoder.geocodeAddressString(address) { placemarks, error in
+                    let geocoder = CLGeocoder()
+                    let address = "\(product.firmline1adr)" + "" + "\(product.firmpostalcd)"//+ "" + "\(product.firmline2adr)"
+                    
+                    geocoder.geocodeAddressString(address) { placemarks, error in
                         if error == nil{
                             if let coordinate = placemarks?.first?.location?.coordinate{
                                 let annotation = MKPointAnnotation()
@@ -42,6 +44,7 @@ class MapViewVC: UIViewController {
                                 
                                 annotations.append(annotation)
                                 self.mapView.addAnnotation(annotation)
+                                geocoder.cancelGeocode()
                             }
                         }else {
                             fatalError("error:\(String(describing: error?.localizedDescription))")
@@ -49,6 +52,7 @@ class MapViewVC: UIViewController {
                         
                     }
                 }
+                
             }else {
                 let alert = UIAlertController(title: "Error", message: "Data couldn't load", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default, handler: nil)

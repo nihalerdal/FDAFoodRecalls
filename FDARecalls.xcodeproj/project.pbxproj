@@ -18,6 +18,7 @@
 		95B17950275AD11B001B4616 /* GetRecalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1794F275AD11A001B4616 /* GetRecalls.swift */; };
 		95B17953275EC93F001B4616 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17952275EC93F001B4616 /* ProductModel.swift */; };
 		95B179562769640E001B4616 /* PayloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B179552769640E001B4616 /* PayloadModel.swift */; };
+		95B179582798F788001B4616 /* RecallDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B179572798F788001B4616 /* RecallDescriptionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		95B1794F275AD11A001B4616 /* GetRecalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecalls.swift; sourceTree = "<group>"; };
 		95B17952275EC93F001B4616 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		95B179552769640E001B4616 /* PayloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadModel.swift; sourceTree = "<group>"; };
+		95B179572798F788001B4616 /* RecallDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecallDescriptionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				95B17945274EF66C001B4616 /* MapViewVC.swift */,
+				95B179572798F788001B4616 /* RecallDescriptionVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				9531B485274EF2EC001FDB64 /* AppDelegate.swift in Sources */,
 				95B17946274EF66C001B4616 /* MapViewVC.swift in Sources */,
 				9531B487274EF2EC001FDB64 /* SceneDelegate.swift in Sources */,
+				95B179582798F788001B4616 /* RecallDescriptionVC.swift in Sources */,
 				95B17953275EC93F001B4616 /* ProductModel.swift in Sources */,
 				95B17950275AD11B001B4616 /* GetRecalls.swift in Sources */,
 			);

@@ -32,7 +32,7 @@ class MapViewVC: UIViewController {
                 
                 for product in RecalledProduct.recalledProduct {
                     let geocoder = CLGeocoder()
-                    let address = "\(product.firmline1adr)" + "" + "\(product.firmpostalcd)"//+ "" + "\(product.firmline2adr)"
+                    let address = "\(product.firmline1adr)" + "," + "\(product.firmcitynam)" + "" + "\(product.firmpostalcd)"//+ "" + "\(product.firmline2adr)"
                     
                     geocoder.geocodeAddressString(address) { placemarks, error in
                         if error == nil{
@@ -54,6 +54,7 @@ class MapViewVC: UIViewController {
                 }
                 
             }else {
+                print("error:\(String(describing: error?.localizedDescription))")
                 let alert = UIAlertController(title: "Error", message: "Data couldn't load", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(action)

@@ -9,16 +9,17 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewVC: UIViewController {
-
+class MapViewVC: UIViewController, MKMapViewDelegate {
+    
     @IBOutlet weak var mapView: MKMapView!
     
-//    lazy var geocoder = CLGeocoder()
+    //    lazy var geocoder = CLGeocoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         loadPins()
-
+        
     }
     
     func loadPins(){
@@ -32,7 +33,7 @@ class MapViewVC: UIViewController {
                 
                 for product in RecalledProduct.recalledProduct {
                     let geocoder = CLGeocoder()
-                    let address = "\(product.firmline1adr)" + "," + "\(product.firmcitynam)" + "" + "\(product.firmpostalcd)"//+ "" + "\(product.firmline2adr)"
+                    let address = "\(product.firmline1adr)" + "" + "\(product.firmline2adr ?? " ")" + "," + "\(product.firmcitynam)" + "" + "\(product.firmpostalcd)"
                     
                     geocoder.geocodeAddressString(address) { placemarks, error in
                         if error == nil{
@@ -62,5 +63,44 @@ class MapViewVC: UIViewController {
             }
         }
     }
+    
+    //MARK: pin view decoration - right callout accessory view
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        
+        if  pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView?.canShowCallout = true
+            pinView?.tintColor = .red
+            pinView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }else{
+            pinView?.annotation = annotation
+        }
+        return pinView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl) {
+     
+            performSegue(withIdentifier: "ShowProductSegue", sender: view)
+        
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "RecallDescriptionVC") as? RecallDescriptionVC {
+                vc.annotation = view.annotation
+                navigationController?.pushViewController(vc, animated: true)
+                
+            }
+    }
+    //    func mapView(_ mapView: MKMapView, didSelect view : MKAnnotationView){
+    //        mapView.deselectAnnotation(view.annotation, animated: false)
+    //
+    //        if let pin = view.annotation as {
+    //            let vc = storyboard?.instantiateViewController(withIdentifier: "RecallDescriptionVC") as? RecallDescriptionVC {
+    //                var cell
+    //            }
+    //        }
+    //    }
 }
 

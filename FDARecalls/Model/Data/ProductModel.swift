@@ -7,8 +7,20 @@
 
 import Foundation
 
-struct RecalledProduct {
+struct RecalledProducts {
     
-    static var recalledProduct = [GetRecalls]()
+    static var recalledProducts = [GetRecalls]()
+    
+}
 
+struct Product {
+    var productDescription : String = ""
+     var productFirmName: String = ""
+     var productQuantitiy: String = ""
+     var productReason: String = ""
+     var status : String = ""
+}
+
+struct Products {
+    static var productList = [Product]()
 }

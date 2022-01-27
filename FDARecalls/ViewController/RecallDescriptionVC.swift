@@ -12,6 +12,7 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
 
  
     var annotation : MKAnnotation!
+    var myProduct : Product!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -41,8 +42,8 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath)
         
         
-        cell.textLabel?.text = annotation.title as! String
-        cell.detailTextLabel?.text = annotation.subtitle as! String
+        cell.textLabel?.text = annotation.subtitle as! String
+        cell.detailTextLabel?.text = "Quantity: \(myProduct.productQuantitiy)"
         
         return cell
     }

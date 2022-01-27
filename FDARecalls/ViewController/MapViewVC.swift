@@ -13,11 +13,13 @@ class MapViewVC: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    //    lazy var geocoder = CLGeocoder()
+    var myProduct : Product!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         mapView.delegate = self
+        
         loadPins()
         
     }
@@ -27,11 +29,11 @@ class MapViewVC: UIViewController, MKMapViewDelegate {
         FDAClient.getRecalls { recallsresponse, error in
             if error == nil {
                 guard let recallsresponse = recallsresponse else {return}
-                RecalledProduct.recalledProduct = recallsresponse
+                RecalledProducts.recalledProducts = recallsresponse
                 
                 var annotations = [MKPointAnnotation]()
                 
-                for product in RecalledProduct.recalledProduct {
+                for product in RecalledProducts.recalledProducts {
                     let geocoder = CLGeocoder()
                     let address = "\(product.firmline1adr)" + "" + "\(product.firmline2adr ?? " ")" + "," + "\(product.firmcitynam)" + "" + "\(product.firmpostalcd)"
                     
@@ -42,7 +44,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate {
                                 annotation.coordinate = coordinate
                                 annotation.title =  "\(product.firmlegalnam)"
                                 annotation.subtitle = "\(product.productdescriptiontxt)"
-                                
+                            
                                 annotations.append(annotation)
                                 self.mapView.addAnnotation(annotation)
                                 geocoder.cancelGeocode()
@@ -84,12 +86,23 @@ class MapViewVC: UIViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-     
-            performSegue(withIdentifier: "ShowProductSegue", sender: view)
-        
+
+        for product in RecalledProducts.recalledProducts {
+           
+            if  product.productdescriptiontxt == view.annotation?.subtitle {
+                myProduct.productQuantitiy = product.productdistributedquantity ?? ""
+                myProduct.productDescription = product.productdescriptiontxt
+                myProduct.productReason = product.productshortreasontxt
+                myProduct.productFirmName = product.firmlegalnam
+                
+            }
+        }
             if let vc = storyboard?.instantiateViewController(withIdentifier: "RecallDescriptionVC") as? RecallDescriptionVC {
                 vc.annotation = view.annotation
+                vc.myProduct = myProduct 
                 navigationController?.pushViewController(vc, animated: true)
+            
+             
                 
             }
     }

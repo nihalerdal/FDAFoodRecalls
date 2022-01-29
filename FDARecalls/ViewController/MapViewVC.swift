@@ -13,7 +13,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var myProduct : Product!
+    var myProduct : Product! = Product(productDescription: "", productFirmName: "", productQuantitiy: "", productReason: "", status: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,8 +102,6 @@ class MapViewVC: UIViewController, MKMapViewDelegate {
                 vc.myProduct = myProduct 
                 navigationController?.pushViewController(vc, animated: true)
             
-             
-                
             }
     }
     //    func mapView(_ mapView: MKMapView, didSelect view : MKAnnotationView){

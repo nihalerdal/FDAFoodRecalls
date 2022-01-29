@@ -20,6 +20,7 @@
 		95B179562769640E001B4616 /* PayloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B179552769640E001B4616 /* PayloadModel.swift */; };
 		95B179582798F788001B4616 /* RecallDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B179572798F788001B4616 /* RecallDescriptionVC.swift */; };
 		95B1795A27A0BA5F001B4616 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1795927A0BA5F001B4616 /* DetailTableViewCell.swift */; };
+		95B1795C27A4A60B001B4616 /* DetailReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1795B27A4A60B001B4616 /* DetailReportVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		95B179552769640E001B4616 /* PayloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadModel.swift; sourceTree = "<group>"; };
 		95B179572798F788001B4616 /* RecallDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecallDescriptionVC.swift; sourceTree = "<group>"; };
 		95B1795927A0BA5F001B4616 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		95B1795B27A4A60B001B4616 /* DetailReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				95B17945274EF66C001B4616 /* MapViewVC.swift */,
 				95B179572798F788001B4616 /* RecallDescriptionVC.swift */,
 				95B1795927A0BA5F001B4616 /* DetailTableViewCell.swift */,
+				95B1795B27A4A60B001B4616 /* DetailReportVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				95B179582798F788001B4616 /* RecallDescriptionVC.swift in Sources */,
 				95B17953275EC93F001B4616 /* ProductModel.swift in Sources */,
 				95B1795A27A0BA5F001B4616 /* DetailTableViewCell.swift in Sources */,
+				95B1795C27A4A60B001B4616 /* DetailReportVC.swift in Sources */,
 				95B17950275AD11B001B4616 /* GetRecalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

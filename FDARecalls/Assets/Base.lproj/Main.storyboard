@@ -76,6 +76,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cell" destination="AhF-pI-Y1E" id="SrI-Pj-jZE"/>
+                                            <segue destination="lct-FI-a6j" kind="show" identifier="ShowDetailSegue" id="MM8-wr-v00"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -100,6 +101,79 @@
             </objects>
             <point key="canvasLocation" x="852" y="137"/>
         </scene>
+        <!--Detail ReportVC-->
+        <scene sceneID="sMC-z5-cbi">
+            <objects>
+                <viewController id="lct-FI-a6j" customClass="DetailReportVC" customModule="FDARecalls" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rhs-5g-Sqa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0EV-mE-tyr">
+                                <rect key="frame" x="20" y="128.5" width="374" height="216.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUo-RQ-wKJ">
+                                <rect key="frame" x="20" y="98" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason Of Recall" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDC-1H-XWL">
+                                <rect key="frame" x="20" y="353" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GNW-Lp-Rt9">
+                                <rect key="frame" x="20" y="382" width="374" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="PHh-HD-5aC"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oup-dE-VTh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oup-dE-VTh" firstAttribute="trailing" secondItem="yUo-RQ-wKJ" secondAttribute="trailing" constant="20" id="126-tP-0ZR"/>
+                            <constraint firstItem="GNW-Lp-Rt9" firstAttribute="leading" secondItem="yUo-RQ-wKJ" secondAttribute="leading" id="1DN-bc-nF1"/>
+                            <constraint firstItem="0EV-mE-tyr" firstAttribute="leading" secondItem="yUo-RQ-wKJ" secondAttribute="leading" id="1u5-G8-dWm"/>
+                            <constraint firstItem="0EV-mE-tyr" firstAttribute="top" secondItem="yUo-RQ-wKJ" secondAttribute="bottom" constant="10" id="3hR-JH-nYA"/>
+                            <constraint firstItem="VDC-1H-XWL" firstAttribute="leading" secondItem="yUo-RQ-wKJ" secondAttribute="leading" id="85h-hA-wD7"/>
+                            <constraint firstItem="GNW-Lp-Rt9" firstAttribute="trailing" secondItem="yUo-RQ-wKJ" secondAttribute="trailing" id="I0V-de-Y8G"/>
+                            <constraint firstItem="yUo-RQ-wKJ" firstAttribute="top" secondItem="oup-dE-VTh" secondAttribute="top" constant="10" id="ONw-7y-A8s"/>
+                            <constraint firstItem="oup-dE-VTh" firstAttribute="trailing" secondItem="VDC-1H-XWL" secondAttribute="trailing" constant="20" id="SXZ-ZH-kh7"/>
+                            <constraint firstItem="GNW-Lp-Rt9" firstAttribute="top" secondItem="VDC-1H-XWL" secondAttribute="bottom" constant="8" symbolic="YES" id="flM-BO-K1O"/>
+                            <constraint firstItem="GNW-Lp-Rt9" firstAttribute="top" secondItem="VDC-1H-XWL" secondAttribute="bottom" constant="8" symbolic="YES" id="qIC-kB-0wL"/>
+                            <constraint firstItem="oup-dE-VTh" firstAttribute="bottom" secondItem="GNW-Lp-Rt9" secondAttribute="bottom" constant="352" id="qsF-0f-lYx"/>
+                            <constraint firstItem="VDC-1H-XWL" firstAttribute="leading" secondItem="oup-dE-VTh" secondAttribute="leading" constant="20" id="rnr-mH-2e8"/>
+                            <constraint firstItem="0EV-mE-tyr" firstAttribute="trailing" secondItem="yUo-RQ-wKJ" secondAttribute="trailing" id="sCH-sg-eao"/>
+                            <constraint firstItem="VDC-1H-XWL" firstAttribute="top" secondItem="0EV-mE-tyr" secondAttribute="bottom" constant="8" symbolic="YES" id="tQ1-Ky-qdm"/>
+                            <constraint firstItem="yUo-RQ-wKJ" firstAttribute="leading" secondItem="oup-dE-VTh" secondAttribute="leading" constant="20" id="wmZ-8K-jqm"/>
+                            <constraint firstItem="VDC-1H-XWL" firstAttribute="trailing" secondItem="yUo-RQ-wKJ" secondAttribute="trailing" id="zwV-Mc-e31"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BQ5-9z-twJ"/>
+                    <connections>
+                        <outlet property="productLabel" destination="yUo-RQ-wKJ" id="tps-6q-tNR"/>
+                        <outlet property="productTextView" destination="0EV-mE-tyr" id="dT6-OS-o79"/>
+                        <outlet property="reasonLabel" destination="VDC-1H-XWL" id="UVe-SI-MOF"/>
+                        <outlet property="reasonTextView" destination="GNW-Lp-Rt9" id="L0k-UX-nKN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kmg-Hb-hb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1650.7246376811595" y="136.60714285714286"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WqU-Qj-eR9">
             <objects>
@@ -120,6 +194,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

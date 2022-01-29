@@ -25,15 +25,6 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
      
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return RecalledProduct.recalledProduct.count
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -46,5 +37,17 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
         cell.detailTextLabel?.text = "Quantity: \(myProduct.productQuantitiy)"
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowDetailSegue" {
+            
+            if let reportVC = segue.destination as? DetailReportVC {
+                
+                reportVC.productTextView.text = myProduct.productDescription
+                reportVC.reasonTextView.text = myProduct.productReason
+            }
+        }
     }
 }

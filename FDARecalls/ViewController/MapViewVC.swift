@@ -13,7 +13,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var myProduct : Product! = Product(productDescription: "", productFirmName: "", productQuantitiy: "", productReason: "", status: "")
+  var myProduct : Product! //= Product(productDescription: "", productFirmName: "", productQuantitiy: "", productReason: "", status: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()

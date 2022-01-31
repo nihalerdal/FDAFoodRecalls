@@ -14,12 +14,10 @@ class DetailReportVC: UIViewController {
     @IBOutlet weak var productTextView: UITextView!
     @IBOutlet weak var reasonTextView: UITextView!
     
-//    var myProduct: Product!
+    var myProduct: Product!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     

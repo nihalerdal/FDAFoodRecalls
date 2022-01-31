@@ -45,8 +45,11 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
             
             if let reportVC = segue.destination as? DetailReportVC {
                 
+                reportVC.myProduct = myProduct
                 reportVC.productTextView.text = myProduct.productDescription
                 reportVC.reasonTextView.text = myProduct.productReason
+                reportVC.productLabel.text = "Product"
+                reportVC.reasonLabel.text = "Reason Of Recall"
             }
         }
     }

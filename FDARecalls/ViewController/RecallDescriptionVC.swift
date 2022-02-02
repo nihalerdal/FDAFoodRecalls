@@ -12,7 +12,7 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
 
  
     var annotation : MKAnnotation!
-    var myProduct : Product!
+    var myProduct = Product()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -40,11 +40,11 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if segue.identifier == "ShowDetailSegue" {
-            
+
             if let reportVC = segue.destination as? DetailReportVC {
-                
+
                 reportVC.myProduct = myProduct
                 reportVC.productTextView.text = myProduct.productDescription
                 reportVC.reasonTextView.text = myProduct.productReason
@@ -53,4 +53,15 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailReportVC") as? DetailReportVC {
+//            vc.myProduct = myProduct
+//            vc.productTextView.text = myProduct.productDescription
+//            vc.reasonTextView.text = myProduct.productReason
+//            navigationController?.pushViewController(vc, animated: true)
+//        }
+//
+//    }
 }

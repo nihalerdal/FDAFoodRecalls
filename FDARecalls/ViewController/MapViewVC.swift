@@ -103,6 +103,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate {
                 navigationController?.pushViewController(vc, animated: true)
             
             }
+        
     }
     //    func mapView(_ mapView: MKMapView, didSelect view : MKAnnotationView){
     //        mapView.deselectAnnotation(view.annotation, animated: false)

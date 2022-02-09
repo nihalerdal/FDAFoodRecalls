@@ -17,10 +17,11 @@
 		95B1794E274F03CE001B4616 /* GetReportsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1794D274F03CE001B4616 /* GetReportsResponse.swift */; };
 		95B17950275AD11B001B4616 /* GetRecalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1794F275AD11A001B4616 /* GetRecalls.swift */; };
 		95B17953275EC93F001B4616 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B17952275EC93F001B4616 /* ProductModel.swift */; };
-		95B179562769640E001B4616 /* PayloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B179552769640E001B4616 /* PayloadModel.swift */; };
 		95B179582798F788001B4616 /* RecallDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B179572798F788001B4616 /* RecallDescriptionVC.swift */; };
 		95B1795A27A0BA5F001B4616 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1795927A0BA5F001B4616 /* DetailTableViewCell.swift */; };
 		95B1795C27A4A60B001B4616 /* DetailReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1795B27A4A60B001B4616 /* DetailReportVC.swift */; };
+		95B1795F27B3565E001B4616 /* FDARecalls.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95B1795D27B3565E001B4616 /* FDARecalls.xcdatamodeld */; };
+		95B1796127B3573E001B4616 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1796027B3573E001B4616 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +37,11 @@
 		95B1794D274F03CE001B4616 /* GetReportsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReportsResponse.swift; sourceTree = "<group>"; };
 		95B1794F275AD11A001B4616 /* GetRecalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecalls.swift; sourceTree = "<group>"; };
 		95B17952275EC93F001B4616 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
-		95B179552769640E001B4616 /* PayloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadModel.swift; sourceTree = "<group>"; };
 		95B179572798F788001B4616 /* RecallDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecallDescriptionVC.swift; sourceTree = "<group>"; };
 		95B1795927A0BA5F001B4616 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		95B1795B27A4A60B001B4616 /* DetailReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportVC.swift; sourceTree = "<group>"; };
+		95B1795E27B3565E001B4616 /* FDARecalls.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FDARecalls.xcdatamodel; sourceTree = "<group>"; };
+		95B1796027B3573E001B4616 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				95B17948274EF700001B4616 /* FDAClient.swift */,
+				95B1795D27B3565E001B4616 /* FDARecalls.xcdatamodeld */,
+				95B1796027B3573E001B4616 /* DataController.swift */,
 			);
 			path = FDAClient;
 			sourceTree = "<group>";
@@ -117,7 +121,6 @@
 			children = (
 				95B1794D274F03CE001B4616 /* GetReportsResponse.swift */,
 				95B1794F275AD11A001B4616 /* GetRecalls.swift */,
-				95B179552769640E001B4616 /* PayloadModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -210,7 +213,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95B179562769640E001B4616 /* PayloadModel.swift in Sources */,
 				95B17949274EF700001B4616 /* FDAClient.swift in Sources */,
 				95B1794E274F03CE001B4616 /* GetReportsResponse.swift in Sources */,
 				9531B485274EF2EC001FDB64 /* AppDelegate.swift in Sources */,
@@ -218,8 +220,10 @@
 				9531B487274EF2EC001FDB64 /* SceneDelegate.swift in Sources */,
 				95B179582798F788001B4616 /* RecallDescriptionVC.swift in Sources */,
 				95B17953275EC93F001B4616 /* ProductModel.swift in Sources */,
+				95B1795F27B3565E001B4616 /* FDARecalls.xcdatamodeld in Sources */,
 				95B1795A27A0BA5F001B4616 /* DetailTableViewCell.swift in Sources */,
 				95B1795C27A4A60B001B4616 /* DetailReportVC.swift in Sources */,
+				95B1796127B3573E001B4616 /* DataController.swift in Sources */,
 				95B17950275AD11B001B4616 /* GetRecalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +444,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		95B1795D27B3565E001B4616 /* FDARecalls.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				95B1795E27B3565E001B4616 /* FDARecalls.xcdatamodel */,
+			);
+			currentVersion = 95B1795E27B3565E001B4616 /* FDARecalls.xcdatamodel */;
+			path = FDARecalls.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9531B479274EF2EC001FDB64 /* Project object */;
 }

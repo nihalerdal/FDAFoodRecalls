@@ -14,7 +14,7 @@ class DetailReportVC: UIViewController {
     @IBOutlet weak var productTextView: UITextView!
     @IBOutlet weak var reasonTextView: UITextView!
     
-    var myProduct = Product()
+    var myProduct : RecalledProduct!
     
     override func viewDidLoad() {
         super.viewDidLoad()

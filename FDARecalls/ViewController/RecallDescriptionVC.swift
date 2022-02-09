@@ -7,12 +7,16 @@
 
 import UIKit
 import MapKit
+import CoreData
 
-class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
  
-    var annotation : MKAnnotation!
-    var myProduct = Product()
+//    var annotation : MKAnnotation!
+    var myProduct : RecalledProduct!
+    
+    var dataController : DataController!
+    var fetchedResultsController: NSFetchedResultsController<RecalledProduct>!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,19 +26,26 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.dataSource = self
         tableView.delegate = self
+       
      
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupFetchedResultsController()
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return fetchedResultsController.sections?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! DetailTableViewCell
         
+        let aProduct = fetchedResultsController.object(at: indexPath)
         
-        cell.textLabel?.text = annotation.subtitle as! String
-        cell.detailTextLabel?.text = "Quantity: \(myProduct.productQuantitiy)"
+        cell.textLabel?.text = aProduct.product
+        cell.detailTextLabel?.text = "Quantity: \(aProduct.productQuantity)"
         
         return cell
     }
@@ -46,14 +57,31 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
             if let reportVC = segue.destination as? DetailReportVC {
 
                 reportVC.myProduct = myProduct
-                reportVC.productTextView.text = myProduct.productDescription
-                reportVC.reasonTextView.text = myProduct.productReason
+                reportVC.productTextView.text = myProduct.product
+                reportVC.reasonTextView.text = myProduct.recallReason
                 reportVC.productLabel.text = "Product"
                 reportVC.reasonLabel.text = "Reason Of Recall"
             }
         }
     }
     
+    func setupFetchedResultsController(){
+        let fetchRequest: NSFetchRequest<RecalledProduct> = RecalledProduct.fetchRequest()
+//        let predicate = NSPredicate(format: "recalledProduct == %@", myProduct) //fetch to the photos spesific to the clicked pin.
+//        fetchRequest.predicate = predicate
+        
+        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("The fetch couldn't be performed: \(error.localizedDescription)")
+        }
+    }
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //
 //        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailReportVC") as? DetailReportVC {

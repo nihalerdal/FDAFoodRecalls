@@ -11,7 +11,7 @@ This app was completed as the final project for Udacity course - Become an iOS D
 • Network Requests\
 • Core Data for local persistence of an object structure
 
-Language: Swift
+Language: Swift\
 Final Project for: Udacity - Become an iOS Developer
 
 ## Contributing

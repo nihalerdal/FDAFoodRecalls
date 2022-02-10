@@ -5,10 +5,10 @@ An iOS app to allows users to see the firms and their products that have been ac
 
 
 This app was completed as the final project for Udacity course - Become an iOS Developer - and uses fundamental princinples of iOS development such as:
-
-• UIKit & Generics
-• URLSessions to interact with a public restful API
-• Network Requests
+ 
+• UIKit & Generics\
+• URLSessions to interact with a public restful API\
+• Network Requests\
 • Core Data for local persistence of an object structure
 
 Language: Swift

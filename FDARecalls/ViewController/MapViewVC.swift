@@ -23,10 +23,9 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
         super.viewDidLoad()
         
         mapView.delegate = self
-        
+        setupFetchedResultsController()
         loadPins()
-     
-        
+
     }
     
     func loadPins(){
@@ -34,7 +33,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
         FDAClient.getRecalls { recallsresponse, error in
             if error == nil {
                 guard let recallsresponse = recallsresponse else {return}
-                
+                self.deleteObjects()
                 for myProduct in recallsresponse {
                     let product = RecalledProduct(context: self.dataController.viewContext)
                     product.productId = myProduct.productid
@@ -60,7 +59,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                 
                 var annotations = [MKPointAnnotation]()
                 
-//                if let products = self.fetchedResultsController.fetchedObjects {
+//                if let products = recallsresponse{
                     for product in recallsresponse {
                         let geocoder = CLGeocoder()
                         let address = "\(product.firmline1adr)" + "" + "\(product.firmline2adr ?? " ")" + "," + "\(product.firmcitynam)" + "" + "\(product.firmpostalcd)"
@@ -71,7 +70,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                                 if let coordinate = placemarks?.first?.location?.coordinate{
                                     let annotation = MKPointAnnotation()
                                     annotation.coordinate = coordinate
-                                    annotation.title =  "\(String(describing: product.firmlegalnam))"
+                                    annotation.title =  "\(String(describing: product.firmcitynam))"
                                     annotation.subtitle = "\(String(describing: product.productdescriptiontxt))"
                                     
                                     annotations.append(annotation)
@@ -81,7 +80,6 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                             }else {
                                 fatalError("error:\(String(describing: error?.localizedDescription))")
                             }
-                            
                         }
                     }
                     
@@ -94,7 +92,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                 }
             }
         }
-    
+//    }
     
     //MARK: pin view decoration - right callout accessory view
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -119,18 +117,18 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
         
         if let products = fetchedResultsController.fetchedObjects {
             for product in products{
-                if let vc = storyboard?.instantiateViewController(withIdentifier: "RecallDescriptionVC") as? RecallDescriptionVC {
-//                    vc.annotation = view.annotation
-                    vc.myProduct = product
-                    vc.dataController = dataController
-    
-                    navigationController?.pushViewController(vc, animated: true)
-                    
-                }else {
-                    fatalError("error!")
-                    
+                if product.product == view.annotation?.subtitle && product.firmName == view.annotation?.title{
+                    if let vc = storyboard?.instantiateViewController(withIdentifier: "RecallDescriptionVC") as? RecallDescriptionVC {
+                        vc.myProduct = product
+                        vc.dataController = dataController
+                        
+                        navigationController?.pushViewController(vc, animated: true)
+                        
+                    }else {
+                        fatalError("error!")
+                        
+                    }
                 }
-                
             }
         }
     }
@@ -144,11 +142,24 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            fatalError("The fetch couldn't be performed: \(error.localizedDescription)")
+         do {
+             try fetchedResultsController.performFetch()
+         } catch {
+             fatalError("The fetch couldn't be performed: \(error.localizedDescription)")
+         }
+     }
+        
+        
+        func deleteObjects(){
+            if self.fetchedResultsController.fetchedObjects?.count != 0 {
+                if let objects = fetchedResultsController.fetchedObjects {
+                    for object in objects{
+                        self.dataController.viewContext.delete(object)
+                    }
+                }
+                
+            }
         }
-    }
+        
 }
 

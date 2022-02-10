@@ -12,7 +12,6 @@ import CoreData
 class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
  
-//    var annotation : MKAnnotation!
     var myProduct : RecalledProduct!
     
     var dataController : DataController!

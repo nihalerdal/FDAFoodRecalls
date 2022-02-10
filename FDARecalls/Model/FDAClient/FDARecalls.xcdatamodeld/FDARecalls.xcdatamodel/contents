@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="RecalledProduct" representedClassName="RecalledProduct" syncable="YES" codeGenerationType="class">
-        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="creationDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="firmAddressLine1" optional="YES" attributeType="String"/>
         <attribute name="firmAddressLine2" optional="YES" attributeType="String"/>
         <attribute name="firmCity" optional="YES" attributeType="String"/>
         <attribute name="firmName" optional="YES" attributeType="String"/>
         <attribute name="postalCode" optional="YES" attributeType="String"/>
-        <attribute name="product" optional="YES" attributeType="String"/>
-        <attribute name="productId" optional="YES" attributeType="String"/>
+        <attribute name="product" optional="YES" attributeType="String" maxValueString="1300"/>
+        <attribute name="productId" attributeType="String"/>
         <attribute name="productQuantity" optional="YES" attributeType="String"/>
-        <attribute name="recallReason" optional="YES" attributeType="String"/>
+        <attribute name="recallReason" attributeType="String"/>
     </entity>
     <elements>
-        <element name="RecalledProduct" positionX="-63" positionY="-18" width="128" height="179"/>
+        <element name="RecalledProduct" positionX="-63" positionY="-18" width="128" height="193"/>
     </elements>
 </model>

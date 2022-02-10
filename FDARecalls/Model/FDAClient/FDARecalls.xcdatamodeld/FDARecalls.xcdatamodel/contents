@@ -7,12 +7,12 @@
         <attribute name="firmCity" optional="YES" attributeType="String"/>
         <attribute name="firmName" optional="YES" attributeType="String"/>
         <attribute name="postalCode" optional="YES" attributeType="String"/>
-        <attribute name="product" optional="YES" attributeType="String" maxValueString="1300"/>
+        <attribute name="product" optional="YES" attributeType="String"/>
         <attribute name="productId" attributeType="String"/>
         <attribute name="productQuantity" optional="YES" attributeType="String"/>
         <attribute name="recallReason" attributeType="String"/>
     </entity>
     <elements>
-        <element name="RecalledProduct" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="RecalledProduct" positionX="-63" positionY="-18" width="128" height="179"/>
     </elements>
 </model>

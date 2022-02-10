@@ -50,6 +50,13 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                     
                     do {
                         try self.dataController.viewContext.save()
+//                        if let objects = self.fetchedResultsController.fetchedObjects{
+//                            for object in objects{
+//                                if object.productId == "153538"{
+//                                    print("\(object)")
+//                                }
+//                            }
+//                        }
                     }catch{
                         fatalError("Unable to save data: \(error.localizedDescription)")
                     }
@@ -114,10 +121,11 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-        
+//        setupFetchedResultsController()
         if let products = fetchedResultsController.fetchedObjects {
             for product in products{
                 if product.product == view.annotation?.subtitle && product.firmName == view.annotation?.title{
+//                    print("\(product)")
                     if let vc = storyboard?.instantiateViewController(withIdentifier: "RecallDescriptionVC") as? RecallDescriptionVC {
                         vc.myProduct = product
                         vc.dataController = dataController

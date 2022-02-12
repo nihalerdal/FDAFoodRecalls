@@ -158,6 +158,8 @@
 			dependencies = (
 			);
 			name = FDARecalls;
+			packageProductDependencies = (
+			);
 			productName = FDARecalls;
 			productReference = 9531B481274EF2EC001FDB64 /* FDARecalls.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +188,8 @@
 				Base,
 			);
 			mainGroup = 9531B478274EF2EC001FDB64;
+			packageReferences = (
+			);
 			productRefGroup = 9531B482274EF2EC001FDB64 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

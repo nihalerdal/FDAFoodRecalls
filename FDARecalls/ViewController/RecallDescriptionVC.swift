@@ -49,20 +49,20 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "ShowDetailSegue" {
-
-            if let reportVC = segue.destination as? DetailReportVC {
-
-                reportVC.myProduct = myProduct
-                reportVC.productTextView.text = myProduct.product
-                reportVC.reasonTextView.text = myProduct.recallReason
-                reportVC.productLabel.text = "Product"
-                reportVC.reasonLabel.text = "Reason Of Recall"
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "ShowDetailSegue" {
+//
+//            if let reportVC = segue.destination as? DetailReportVC {
+//
+//                reportVC.myProduct = myProduct
+//                reportVC.productTextView.text = myProduct.product
+//                reportVC.reasonTextView.text = myProduct.recallReason
+//                reportVC.productLabel.text = "Product"
+//                reportVC.reasonLabel.text = "Reason Of Recall"
+//            }
+//        }
+//    }
     
     func setupFetchedResultsController(){
         let fetchRequest: NSFetchRequest<RecalledProduct> = RecalledProduct.fetchRequest()
@@ -81,14 +81,16 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
             fatalError("The fetch couldn't be performed: \(error.localizedDescription)")
         }
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailReportVC") as? DetailReportVC {
-//            vc.myProduct = myProduct
-//            vc.productTextView.text = myProduct.productDescription
-//            vc.reasonTextView.text = myProduct.productReason
-//            navigationController?.pushViewController(vc, animated: true)
-//        }
-//
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailReportVC") as? DetailReportVC {
+            
+           
+            vc.myProduct = myProduct
+//            vc.productTextView.text = myProduct.product
+//            vc.reasonTextView.text = myProduct.recallReason
+            navigationController?.pushViewController(vc, animated: true)
+        }
+
+    }
 }

@@ -18,6 +18,11 @@ class DetailReportVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        productTextView.text = myProduct.product
+        reasonTextView.text = myProduct.recallReason
+        productLabel.text = "Product"
+        reasonLabel.text = "Reason Of Recall"
     }
     
     

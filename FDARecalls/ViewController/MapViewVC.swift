@@ -124,7 +124,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
 //        setupFetchedResultsController()
         if let products = fetchedResultsController.fetchedObjects {
             for product in products{
-                if product.product == view.annotation?.subtitle && product.firmName == view.annotation?.title{
+                if product.product == view.annotation?.subtitle {
 //                    print("\(product)")
                     if let vc = storyboard?.instantiateViewController(withIdentifier: "RecallDescriptionVC") as? RecallDescriptionVC {
                         vc.myProduct = product

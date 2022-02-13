@@ -5,9 +5,11 @@ An iOS app to allows users to see the firms and their products that have been ac
 
 Please see screenshots below for the functionality of the app
 
-<img src="https://user-images.githubusercontent.com/61894386/153771577-75831804-2ab4-48ac-9715-d50cd78ed90e.png" width="320" height="640">
-<img src="https://user-images.githubusercontent.com/61894386/153772594-05a0b25c-6991-41da-9238-b57674b16552.png" width="320" height="640">
-<img src="https://user-images.githubusercontent.com/61894386/153771581-9bbfebf7-b451-4c56-826c-d1c8ba309cc3.png" width="320" height="640">
+<kbd><img src="https://user-images.githubusercontent.com/61894386/153771577-75831804-2ab4-48ac-9715-d50cd78ed90e.png" width="320" height="700"><kbd>
+ 
+<kbd><img src="https://user-images.githubusercontent.com/61894386/153772594-05a0b25c-6991-41da-9238-b57674b16552.png" width="320" height="700"><kbd>
+ 
+<kbd><img src="https://user-images.githubusercontent.com/61894386/153771581-9bbfebf7-b451-4c56-826c-d1c8ba309cc3.png" width="320" height="700"><kbd>
 
 This app was completed as the final project for Udacity course - Become an iOS Developer - and uses fundamental princinples of iOS development such as:
  

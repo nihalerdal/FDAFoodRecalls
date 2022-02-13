@@ -5,7 +5,7 @@ An iOS app to allows users to see the firms and their products that have been ac
 
 Please see screenshots below for the functionality of the app
 
-<kbd><img src="https://user-images.githubusercontent.com/61894386/153771577-75831804-2ab4-48ac-9715-d50cd78ed90e.png" width="320" height="640"><kbd>
+<img src="https://user-images.githubusercontent.com/61894386/153771577-75831804-2ab4-48ac-9715-d50cd78ed90e.png" width="320" height="640">
 <img src="https://user-images.githubusercontent.com/61894386/153771579-05d035f1-6a91-4cdb-b8e0-35d4f04e5b74.png" width="320" height="640">
 <img src="https://user-images.githubusercontent.com/61894386/153771581-9bbfebf7-b451-4c56-826c-d1c8ba309cc3.png" width="320" height="640">
 

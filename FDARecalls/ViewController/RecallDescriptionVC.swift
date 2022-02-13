@@ -42,7 +42,7 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
 //        let aProduct = fetchedResultsController.object(at: indexPath)
         
         cell.textLabel?.text = myProduct.product
-        cell.detailTextLabel?.text = "Quantity: \(myProduct.productQuantity)"
+        cell.detailTextLabel?.text = "Quantity: \(myProduct.productQuantity ?? "")" 
         
         return cell
     }

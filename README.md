@@ -5,9 +5,10 @@ An iOS app to allows users to see the firms and their products that have been ac
 
 Please see screenshots below for the functionality of the app
 
-(https://github.com/nihalerdal/FDAFoodRecalls/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20-%202022-02-13%20at%2011.21.29.png?raw=true)
-(https://github.com/nihalerdal/FDAFoodRecalls/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20-%202022-02-13%20at%2011.21.35.png?raw=true)
-(https://github.com/nihalerdal/FDAFoodRecalls/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20-%202022-02-13%20at%2011.21.39.png?raw=true)
+![Simulator Screen Shot - iPhone 11 Pro - 2022-02-13 at 11 21 29](https://user-images.githubusercontent.com/61894386/153771577-75831804-2ab4-48ac-9715-d50cd78ed90e.png)
+![Simulator Screen Shot - iPhone 11 Pro - 2022-02-13 at 11 21 35](https://user-images.githubusercontent.com/61894386/153771579-05d035f1-6a91-4cdb-b8e0-35d4f04e5b74.png)
+![Simulator Screen Shot - iPhone 11 Pro - 2022-02-13 at 11 21 39](https://user-images.githubusercontent.com/61894386/153771581-9bbfebf7-b451-4c56-826c-d1c8ba309cc3.png)
+
 
 This app was completed as the final project for Udacity course - Become an iOS Developer - and uses fundamental princinples of iOS development such as:
  

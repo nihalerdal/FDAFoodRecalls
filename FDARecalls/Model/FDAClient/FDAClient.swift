@@ -72,11 +72,6 @@ class FDAClient{
             do {
                 let responseObject = try decoder.decode(GetReportsResponse.self, from: data)
                 
-//                for recalledproduct in responseObject.result{
-//                    let address = recalledproduct.firmline1adr + "" + recalledproduct.firmline2adr
-//                    RecalledProduct.addresses.append(address)
-//                }
-                
                 DispatchQueue.main.async {
                     completion(responseObject.result, nil)
                 }

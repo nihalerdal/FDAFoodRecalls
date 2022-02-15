@@ -39,8 +39,6 @@ class RecallDescriptionVC: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! DetailTableViewCell
         
-//        let aProduct = fetchedResultsController.object(at: indexPath)
-        
         cell.textLabel?.text = myProduct.product
         cell.detailTextLabel?.text = "Quantity: \(myProduct.productQuantity ?? "")" 
         

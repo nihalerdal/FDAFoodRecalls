@@ -66,12 +66,9 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                 
                 var annotations = [MKPointAnnotation]()
                 
-//                if let products = recallsresponse{
                     for product in recallsresponse {
                         let geocoder = CLGeocoder()
                         let address = "\(product.firmline1adr)" + "" + "\(product.firmline2adr ?? " ")" + "," + "\(product.firmcitynam)" + "" + "\(product.firmpostalcd)"
-                
-                    
                         geocoder.geocodeAddressString(address) { placemarks, error in
                             if error == nil{
                                 if let coordinate = placemarks?.first?.location?.coordinate{

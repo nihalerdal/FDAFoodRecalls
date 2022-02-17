@@ -13,12 +13,11 @@ import CoreData
 class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var dataController : DataController!
     var fetchedResultsController: NSFetchedResultsController<RecalledProduct>!
-    
-//    var myProduct = Product()// = Product(productDescription: "", productFirmName: "", productQuantitiy: "", productReason: "", status: "")
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +30,7 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
     func loadPins(){
         
         FDAClient.getRecalls { recallsresponse, error in
+            self.setActivityIndicator(true)
             if error == nil {
                 guard let recallsresponse = recallsresponse else {return}
                 self.deleteObjects()
@@ -50,13 +50,6 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                     
                     do {
                         try self.dataController.viewContext.save()
-//                        if let objects = self.fetchedResultsController.fetchedObjects{
-//                            for object in objects{
-//                                if object.productId == "153538"{
-//                                    print("\(object)")
-//                                }
-//                            }
-//                        }
                     }catch{
                         fatalError("Unable to save data: \(error.localizedDescription)")
                     }
@@ -94,9 +87,10 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                     alert.addAction(action)
                     self.present(alert, animated: true, completion: nil)
                 }
+            self.setActivityIndicator(false)
             }
         }
-//    }
+
     
     //MARK: pin view decoration - right callout accessory view
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -165,6 +159,20 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                 
             }
         }
+    
+    func setActivityIndicator(_ running : Bool){
+        
+        if running {
+            DispatchQueue.main.async {
+                self.activityIndicator.startAnimating()
+            }
+        }else {
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
+        }
+        activityIndicator.isHidden = !running
+    }
         
 }
 

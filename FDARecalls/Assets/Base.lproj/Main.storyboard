@@ -19,25 +19,35 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m8A-lw-Lox">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dLt-p2-Q2f">
+                                <rect key="frame" x="177" y="418" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="XGy-hv-B0I"/>
+                                    <constraint firstAttribute="height" constant="60" id="aYI-GO-oec"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="weg-nm-b7O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dLt-p2-Q2f" firstAttribute="centerX" secondItem="Zki-lF-nQO" secondAttribute="centerX" id="49w-If-qPb"/>
                             <constraint firstItem="m8A-lw-Lox" firstAttribute="top" secondItem="weg-nm-b7O" secondAttribute="top" id="7EG-Sh-XgA"/>
                             <constraint firstItem="m8A-lw-Lox" firstAttribute="leading" secondItem="weg-nm-b7O" secondAttribute="leading" id="NCs-Os-lBm"/>
+                            <constraint firstItem="dLt-p2-Q2f" firstAttribute="centerY" secondItem="Zki-lF-nQO" secondAttribute="centerY" id="dGK-da-YYW"/>
                             <constraint firstItem="weg-nm-b7O" firstAttribute="trailing" secondItem="m8A-lw-Lox" secondAttribute="trailing" id="fvJ-lz-ZKw"/>
                             <constraint firstItem="weg-nm-b7O" firstAttribute="bottom" secondItem="m8A-lw-Lox" secondAttribute="bottom" id="wf8-et-CAy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="FDA Recalls" id="ncP-TQ-SGq"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="dLt-p2-Q2f" id="Kdo-p7-sIM"/>
                         <outlet property="mapView" destination="m8A-lw-Lox" id="VMP-7i-Sqm"/>
                         <segue destination="CbT-3l-FM1" kind="show" identifier="ShowProductSegue" id="6JW-cu-iUE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDx-Ab-zqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3" y="137"/>
+            <point key="canvasLocation" x="-4.3478260869565224" y="136.60714285714286"/>
         </scene>
         <!--Recall DescriptionVC-->
         <scene sceneID="Pfi-8g-60T">

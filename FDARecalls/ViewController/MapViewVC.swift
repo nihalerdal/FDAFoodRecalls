@@ -64,11 +64,26 @@ class MapViewVC: UIViewController, MKMapViewDelegate, NSFetchedResultsController
                         let address = "\(product.firmline1adr)" + "" + "\(product.firmline2adr ?? " ")" + "," + "\(product.firmcitynam)" + "" + "\(product.firmpostalcd)"
                         geocoder.geocodeAddressString(address) { placemarks, error in
                             if error == nil{
-                                if let coordinate = placemarks?.first?.location?.coordinate{
+                                if let latitude = placemarks?.first?.location?.coordinate.latitude,
+                                   let longitude = placemarks?.first?.location?.coordinate.longitude{
                                     let annotation = MKPointAnnotation()
-                                    annotation.coordinate = coordinate
+                                    annotation.coordinate.latitude = latitude
+                                    annotation.coordinate.longitude = longitude
                                     annotation.title =  "\(String(describing: product.firmcitynam))"
                                     annotation.subtitle = "\(String(describing: product.productdescriptiontxt))"
+                                    
+                                    //persist pins
+                                    let productData = RecalledProduct(context: self.dataController.viewContext)
+                                    if productData.productId == product.productid{
+                                        productData.latitude = latitude
+                                        productData.longitude = longitude
+                                        
+                                        do {
+                                            try self.dataController.viewContext.save()
+                                        }catch{
+                                            fatalError("Unable to save data: \(error.localizedDescription)")
+                                        }
+                                    }
                                     
                                     annotations.append(annotation)
                                     self.mapView.addAnnotation(annotation)

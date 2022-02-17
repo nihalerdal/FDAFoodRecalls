@@ -6,6 +6,8 @@
         <attribute name="firmAddressLine2" optional="YES" attributeType="String"/>
         <attribute name="firmCity" optional="YES" attributeType="String"/>
         <attribute name="firmName" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="postalCode" optional="YES" attributeType="String"/>
         <attribute name="product" optional="YES" attributeType="String"/>
         <attribute name="productId" attributeType="String"/>
@@ -13,6 +15,6 @@
         <attribute name="recallReason" attributeType="String"/>
     </entity>
     <elements>
-        <element name="RecalledProduct" positionX="-63" positionY="-18" width="128" height="179"/>
+        <element name="RecalledProduct" positionX="-63" positionY="-18" width="128" height="209"/>
     </elements>
 </model>

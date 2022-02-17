@@ -33,7 +33,11 @@ Please feel free to contribute to **FDAFoodRecalls**. Fork and clone this reposi
  ## How to build
 This project can run without any additional setup. 
  
+ ## Requirements
+Xcode 13 or above\
+Swift 4 or above
+ 
  ## Maintainers
-nihalerdal
+@nihalerdal
  
  
